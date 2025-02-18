@@ -1,3 +1,18 @@
+.header {
+ padding: 0rem;
+ text-align: center;
+ color:red
+}
+
+.articles_button {
+  color: blue
+}
+#header-poop {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
