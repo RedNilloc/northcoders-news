@@ -1,6 +1,5 @@
-import PoopEmoji2 from "../assets/PoopEmoji2.png"
+import CatPNG1 from "../assets/CatPNG1.png"
 
-console.log(PoopEmoji2)
 
 function Header() {
     return <>
@@ -8,7 +7,7 @@ function Header() {
     <h1 >Northcoders News </h1>
     </div>
     <div>
-    <p>It Won't Give You the <img src={PoopEmoji2} alt="A smiling poop" id="header-poop"/>s!</p>
+    <p>Read your News and Admire the Mews!<img src={CatPNG1} alt="An adorable kitten" id="header-kitten"/></p>
     </div>
     </>
 }
