@@ -4,13 +4,57 @@
  color:red
 }
 
+/* .articles-page-articles{
+  color: green
+} */
+
+#power1 {
+  color: goldenrod;
+  display:inline
+}
+#power2 {
+  color:blue;
+  display:inline
+}
+#power3 {
+  color: green;
+  display:inline
+}
+#power4 {
+  color: red;
+  display:inline
+}
+#power5 {
+  color: purple;
+  display:inline
+}
+#power6 {
+  color: cyan;
+  display:inline
+}
+
+.background {
+  color: white
+}
+
 .articles_button {
   color: blue
 }
-#header-poop {
+#header-kitten {
   max-height: 40px;
   max-width: 40px;
 }
+#article-image {
+  max-height: 350px;
+  max-width: 420px;
+}
+
+/* #article-topic {
+  display:inline
+} 
+#article-votes {
+  display:inline
+} */
 
 
 #root {
