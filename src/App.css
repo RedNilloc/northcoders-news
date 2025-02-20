@@ -33,6 +33,13 @@
   display:inline
 }
 
+#CommentCard {
+  border:0.5px; 
+  border-style: solid;
+  border-color: rgb(164, 156, 151);
+  margin-bottom: 1rem
+}
+
 .background {
   color: white
 }
