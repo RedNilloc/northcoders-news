@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function ArticleCard({article}) {
     return <>
     <h3>{article.title}</h3>
-    <button className = "article-card"> <img id="article-image" alt="Relevant mage for listed article" src={article.article_img_url}/> </button>
+    <img id="article-image" alt="Relevant mage for listed article" src={article.article_img_url}/>
     <Link to={`/articles/${article.article_id}`}>
     <p><button className = "view-article">Click to View Article</button></p>
     </Link>
@@ -15,5 +15,3 @@ function ArticleCard({article}) {
 }
 
 export default ArticleCard
-
-// should the title be made the button in addition to the image?
