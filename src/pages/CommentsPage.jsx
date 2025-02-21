@@ -5,8 +5,7 @@ import { Link, useParams } from "react-router";
 import "../App.css";
 import axios from "axios";
 
-function CommentsPage() {
-  const { article_id } = useParams();
+function CommentsPage({ article_id }) {
   const [comment, setComment] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -39,7 +38,7 @@ function CommentsPage() {
                 <CommentCard CardComment={CardComment} />
               </div>
             </>
-          );
+          );  
         })}
       </div>
     </>

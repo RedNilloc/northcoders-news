@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CommentsPage from "./CommentsPage";
+import ArticleVotesCounter from "../Components/ArticleVotesCounter";
 import { Link } from "react-router";
 
 function SingleArticlePage() {
@@ -33,10 +34,11 @@ function SingleArticlePage() {
       <h3>{article.title}</h3>
       <p>{article.body}</p>
       <p>Posted: {article.created_at}</p>
-      <p>Rating: {article.votes}</p>
-       <Link to={`/articles/${article.article_id}/comments`}>
-      <p><button className="view-comments">Click to View Comments</button></p>
-      </Link>
+      <p>Rating: <ArticleVotesCounter article_id={article_id} articleVotes={article.votes} setArticle={setArticle}/></p>
+      <div>
+        <CommentsPage article_id={article_id}/>
+       </div>
+       
     </>
   );
 }

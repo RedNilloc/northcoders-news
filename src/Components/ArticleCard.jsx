@@ -10,7 +10,7 @@ function ArticleCard({article}) {
     <p id="article-topic">Topic: {article.topic}</p>
     <span id="article-votes">Votes: {article.votes}</span>
     <span>Comments: {article.comment_count}</span>
-    <p><button>View Comments</button></p>
+    
     </>
 }
 
