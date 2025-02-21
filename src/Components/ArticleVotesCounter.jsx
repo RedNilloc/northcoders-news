@@ -1,27 +1,40 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-function ArticleVotesCounter({ article_id }) {
-  const [articleVotes, setArticleVotes] = useState(0);
+function ArticleVotesCounter({ article_id, articleVotes, setArticle }) {
+  // const [articleVotes, setArticleVotes] = useState(articleScore);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
-    getVotesCount(article_id).then((articleVotes) => {
-      setArticleVotes(articleVotes);
-    })
-  }, []);
 
-  const handleVote = () => {
-    setArticleVotes((currentVotesCount) => currentVotesCount + 1);
-    postVote();
+  const handleVote = (voteUpdate) => {
+    setArticle((currentArticle) => {return {...currentArticle, votes:articleVotes + voteUpdate}  });
+
+    setLoading(true);
+    axios
+      .patch(  
+        `https://nilloc-northcoders-news-api.onrender.com/api/articles/${article_id}`,
+       {inc_votes: voteUpdate})
+       .catch((err) => {
+        setError(true);
+      })
+      .finally(() => setLoading(false));
   }
 
-// this whole thing needs the app.patch endpoint
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
+ 
+// at the moment the votes aren't being made permanent
 
   return <>
   <div>
-    <button onClick={handleVote}>Upvote!</button>
+    <button onClick={() => handleVote(1)}>Upvote!</button>
     <p>{articleVotes}</p>
+    <button onClick={() => handleVote(-1)}>Downvote!</button>
   </div>
   </>;
+ 
 }
 
 export default ArticleVotesCounter;

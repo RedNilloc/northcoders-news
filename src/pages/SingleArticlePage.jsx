@@ -34,11 +34,11 @@ function SingleArticlePage() {
       <h3>{article.title}</h3>
       <p>{article.body}</p>
       <p>Posted: {article.created_at}</p>
-      <p>Rating: {article.votes}</p>
+      <p>Rating: <ArticleVotesCounter article_id={article_id} articleVotes={article.votes} setArticle={setArticle}/></p>
       <div>
         <CommentsPage article_id={article_id}/>
        </div>
-       <ArticleVotesCounter article_id={article_id} />
+       
     </>
   );
 }
